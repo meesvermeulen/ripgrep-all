@@ -29,8 +29,8 @@ pub fn open_cache_db() -> Result<std::sync::Arc<std::sync::RwLock<rkv::Rkv>>, Er
     Ok(db_arc)
 }
 
-pub fn rga_preproc(
-    ai: AdaptInfo,
+pub fn rga_preproc<'a>(
+    ai: AdaptInfo<'a>,
     mb_db_arc: Option<std::sync::Arc<std::sync::RwLock<rkv::Rkv>>>,
 ) -> Result<(), Error> {
     let adapters = adapter_matcher()?;
