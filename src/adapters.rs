@@ -1,4 +1,5 @@
 pub mod decompress;
+pub mod djvutxt;
 pub mod ffmpeg;
 pub mod pandoc;
 pub mod pdfpages;
@@ -85,6 +86,7 @@ pub fn get_all_adapters() -> AdaptersTuple {
         Rc::new(ffmpeg::FFmpegAdapter::new()),
         Rc::new(pandoc::PandocAdapter::new()),
         Rc::new(poppler::PopplerAdapter::new()),
+        Rc::new(djvutxt::DjvutxtAdapter::new()),
         Rc::new(zip::ZipAdapter::new()),
         Rc::new(decompress::DecompressAdapter::new()),
         Rc::new(tar::TarAdapter::new()),

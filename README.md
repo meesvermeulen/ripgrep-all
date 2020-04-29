@@ -39,7 +39,7 @@ On Arch Linux, you can simply install from AUR: `yay -S ripgrep-all`.
 
 On Debian-based distributions you can download the [rga binary][latestrelease] and get the dependencies like this:
 
-`apt install ripgrep pandoc poppler-utils ffmpeg cargo`
+`apt install ripgrep pandoc poppler-utils djvulibre-bin ffmpeg cargo`
 
 If ripgrep is not included in your package sources, get it from [here](https://github.com/BurntSushi/ripgrep/releases).
 
@@ -59,14 +59,14 @@ If you get an error like `VCRUNTIME140.DLL could not be found`, you need to inst
 
 To install the dependencies:
 
-`brew install pandoc poppler tesseract ffmpeg`
+`brew install pandoc poppler djvulibre tesseract ffmpeg`
 
 ### Compile from source
 
 rga should compile with stable Rust (v1.36.0+, check with `rustc --version`). To build it, run the following (or the equivalent in your OS):
 
 ```
-   ~$ apt install build-essential pandoc poppler-utils ffmpeg ripgrep cargo
+   ~$ apt install build-essential pandoc poppler-utils djvulibre-bin ffmpeg ripgrep cargo
    ~$ cargo install ripgrep_all
    ~$ rga --version    # this should work now
 ```
@@ -98,6 +98,12 @@ Adapters:
     Uses pdftotext (from poppler-utils) to extract plain text from PDF files
 
     Extensions: .pdf
+
+-   **djvutext**
+
+    Uses djvutext (from DjVuLibre) to extract plain text from DjVu files
+
+    Extensions: .djvu
 
 *   **zip**
 
